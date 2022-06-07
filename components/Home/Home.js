@@ -21,7 +21,7 @@ function Home() {
       <div className="home-banner">
         <div className="home-img">
           <Image
-            src={"/images/home-background.png"}
+            src={"/Images/home-background.png"}
             alt={`home-img`}
             layout="fill"
           />
