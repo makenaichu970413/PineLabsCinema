@@ -42,6 +42,12 @@ function Setting(props) {
     handleCloseMenuClick();
   };
 
+  const langTitle = () => {
+    if (locale == "en") return language["zh"]["title"];
+    else if (locale == "zh") return language["ms"]["title"];
+    else if (locale == "ms") return language["en"]["title"];
+  };
+
   return (
     <ul className="setting">
       <li key={1} className="theme" onClick={handleLightClick}>
@@ -65,7 +71,7 @@ function Setting(props) {
           <i className="bx bx-globe"></i>
         </div>
 
-        <span className="name"> {language[locale]["title"]}</span>
+        <span className="name"> {langTitle()}</span>
 
         <ul className="dropdown">
           {languages.map((item, i) => {

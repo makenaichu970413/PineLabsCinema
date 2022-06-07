@@ -32,7 +32,7 @@ function Home() {
 
           <p>releasing 10 april </p>
 
-          <Link href={"/movie"}>
+          <Link href={"/movie/522931"}>
             <a className="watch-btn">
               <i className="bx bx-right-arrow"></i>
               <span>{t(movie["trailer"])}</span>

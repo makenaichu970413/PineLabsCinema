@@ -1181,10 +1181,12 @@ main {
   min-width: 100vw;
   background: var(--bg-color-1);
   color: var(--text-color-1);
-  // box-shadow: $boxShadow;
   display: flex;
   justify-content: space-between;
   z-index: 80;
+  box-shadow: 1px 0px 23px -4px rgba(0, 0, 0, 0.52);
+  -webkit-box-shadow: 1px 0px 23px -4px rgba(0, 0, 0, 0.52);
+  -moz-box-shadow: 1px 0px 23px -4px rgba(0, 0, 0, 0.52);
 
   .nav-left,
   .nav-right {
@@ -1427,12 +1429,13 @@ main {
   height: 10vh;
   min-width: 100vw;
   bottom: 0;
-
-  //   background: var(--bg-color-1);
   display: flex;
   align-items: center;
   justify-content: center;
   user-select: none;
+  box-shadow: 1px 0px 23px -4px rgba(0, 0, 0, 0.52);
+  -webkit-box-shadow: 1px 0px 23px -4px rgba(0, 0, 0, 0.52);
+  -moz-box-shadow: 1px 0px 23px -4px rgba(0, 0, 0, 0.52);
 
   .credit {
     color: var(--text-color-1);

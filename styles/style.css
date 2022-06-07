@@ -1014,6 +1014,9 @@ main {
   display: flex;
   justify-content: space-between;
   z-index: 80;
+  box-shadow: 1px 0px 23px -4px rgba(0, 0, 0, 0.52);
+  -webkit-box-shadow: 1px 0px 23px -4px rgba(0, 0, 0, 0.52);
+  -moz-box-shadow: 1px 0px 23px -4px rgba(0, 0, 0, 0.52);
 }
 .navbar .nav-left,
 .navbar .nav-right {
@@ -1220,6 +1223,9 @@ main {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  box-shadow: 1px 0px 23px -4px rgba(0, 0, 0, 0.52);
+  -webkit-box-shadow: 1px 0px 23px -4px rgba(0, 0, 0, 0.52);
+  -moz-box-shadow: 1px 0px 23px -4px rgba(0, 0, 0, 0.52);
 }
 .footer .credit {
   color: var(--text-color-1);
