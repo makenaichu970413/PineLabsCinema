@@ -20,12 +20,11 @@ function Home() {
     <section className="home" id="home">
       <div className="home-banner">
         <div className="home-img">
-          <img src="/images/home-background.png" />
-          {/* <Image
+          <Image
             src={"/images/home-background.png"}
             alt={`home-img`}
             layout="fill"
-          /> */}
+          />
         </div>
 
         <div className="home-content">

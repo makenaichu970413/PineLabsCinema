@@ -15,5 +15,8 @@ module.exports = () => {
 
       redirect: "https://www.cathaycineplexes.com.sg/",
     },
+    images: {
+      domains: ["image.tmdb.org"],
+    },
   };
 };

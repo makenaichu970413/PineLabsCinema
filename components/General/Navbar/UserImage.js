@@ -3,13 +3,15 @@
 // ####################################
 import React, { useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
+
 // ####################################
 
 function UserImage() {
   return (
     <Link href="/">
       <div className="user-image">
-        <img src="/images/user-img.jpeg" alt="user-img" />
+        <Image src="/images/user-img.jpeg" alt="user-img" layout="fill" />
       </div>
     </Link>
   );

@@ -35,7 +35,7 @@ function SortingBar() {
           <h2>{t(sort["title"])}:</h2>
           <select className="sort-by" id="sortBy" onChange={handleOnChange}>
             <option value="popularity" selected={true}>
-              {t(sort["title"])}
+              {t(sort["popularity"])}
             </option>
             <option value="release_date">{t(sort["release_date"])}</option>
             <option value="revenue">{t(sort["revenue"])}</option>

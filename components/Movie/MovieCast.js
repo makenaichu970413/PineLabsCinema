@@ -15,7 +15,11 @@ function MovieCast(props) {
   return (
     <div className="cast-box">
       <div className="image">
-        <img src={`../../images/play-page/cast${i + 1}.jpg`} alt="cast-img" />
+        <Image
+          src={`/images/play-page/cast${i + 1}.jpg`}
+          layout="fill"
+          alt={`cast-img-${i + 1}`}
+        />
       </div>
       <span className="name">Dwayne Johnson</span>
     </div>

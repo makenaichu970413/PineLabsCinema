@@ -31,7 +31,7 @@ function MovieBanner(props) {
   return (
     <div className="play-container" id={`movie-${data["id"]}`}>
       <div className="play-img">
-        <img src={image} alt="play-img" />
+        <Image src={image} alt={`play-img-${data["id"]}`} layout="fill" />
       </div>
 
       <div className="play-text">
