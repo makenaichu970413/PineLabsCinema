@@ -13,7 +13,7 @@ function MovieBox(props) {
 
   const image = data["poster_path"]
     ? `${process.env.movieDB.imgDomain}/${data["poster_path"]}`
-    : "/images/no-img.jpg";
+    : "/Images/no-img.jpg";
 
   function Tags() {
     let isAdult = data["adult"];

@@ -26,7 +26,7 @@ function MovieBanner(props) {
 
   const image = data["poster_path"]
     ? `${process.env.movieDB.imgDomain}/${data["poster_path"]}`
-    : "/images/no-img.jpg";
+    : "/Images/no-img.jpg";
 
   return (
     <div className="play-container" id={`movie-${data["id"]}`}>
@@ -68,7 +68,7 @@ function MovieBanner(props) {
         <div className="video-box">
           <video
             id={"movie-trailer"}
-            src={"/images/play-page/Jumanji.mp4"}
+            src={"/Images/play-page/Jumanji.mp4"}
             controls={true}
           ></video>
 

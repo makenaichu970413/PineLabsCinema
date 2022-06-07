@@ -16,7 +16,7 @@ function MovieCast(props) {
     <div className="cast-box">
       <div className="image">
         <Image
-          src={`/images/play-page/cast${i + 1}.jpg`}
+          src={`/Images/play-page/cast${i + 1}.jpg`}
           layout="fill"
           alt={`cast-img-${i + 1}`}
         />

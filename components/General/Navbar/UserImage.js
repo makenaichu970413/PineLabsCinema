@@ -11,7 +11,7 @@ function UserImage() {
   return (
     <Link href="/">
       <div className="user-image">
-        <Image src="/images/user-img.jpeg" alt="user-img" layout="fill" />
+        <Image src="/Images/user-img.jpeg" alt="user-img" layout="fill" />
       </div>
     </Link>
   );
