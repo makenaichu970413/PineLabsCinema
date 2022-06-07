@@ -19,7 +19,7 @@ function MovieGrids(props) {
     <div className="movie-grids">
       {data &&
         data.map((item, i) => {
-          return <MovieBox data={{ i, ...item }} genres={genres} />;
+          return <MovieBox key={i} data={{ i, ...item }} genres={genres} />;
         })}
     </div>
   );

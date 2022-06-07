@@ -67,7 +67,7 @@ function Setting(props) {
 
         <span className="name"> {language[locale]["title"]}</span>
 
-        <ul class="dropdown">
+        <ul className="dropdown">
           {languages.map((item, i) => {
             return (
               <li key={i} data-lang={item} onClick={handleLanguageClick}>

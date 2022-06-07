@@ -8,6 +8,7 @@ import ReactStars from "react-stars";
 
 function MovieBox(props) {
   const { data, genres = null } = props;
+  const delay = (data["i"] + 1) * 150;
 
   const image = data["poster_path"]
     ? `${process.env.movieDB.imgDomain}/${data["poster_path"]}`
@@ -37,7 +38,12 @@ function MovieBox(props) {
   }
 
   return (
-    <div className="movie-box" id={data["id"]}>
+    <div
+      className="movie-box"
+      id={data["id"]}
+      // data-aos="fade-up"
+      // data-aos-delay={delay}
+    >
       <div className="image">
         <img src={image} alt={`img-${data["id"]}`} />
       </div>

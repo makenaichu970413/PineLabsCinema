@@ -38,10 +38,7 @@ function MoviesFilter(props) {
   const { search, order, sort } = moviesData;
   const { t, i18n } = useTranslation();
 
-  if (!data) {
-    return <Spinner />;
-  }
-  const result = data["result"];
+  const result = "result" in data ? data["result"] : null;
 
   useEffect(() => {
     if (result) {
@@ -115,6 +112,10 @@ function MoviesFilter(props) {
       });
     }
   };
+
+  if (!data) {
+    return <Spinner />;
+  }
 
   return (
     <Fragment>
