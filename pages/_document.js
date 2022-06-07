@@ -13,6 +13,10 @@ class MyDocument extends Document {
             rel="stylesheet"
             href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
           />
+          <meta
+            http-equiv="Content-Security-Policy"
+            content="upgrade-insecure-requests"
+          />
         </Head>
         <body>
           <Main />
