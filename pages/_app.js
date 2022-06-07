@@ -62,6 +62,10 @@ function MyApp({ Component, pageProps }) {
         />
         <meta property="og:image:width" content={data["ogImage"]["width"]} />
         <meta property="og:image:height" content={data["ogImage"]["height"]} />
+        <meta
+          http-equiv="Content-Security-Policy"
+          content="upgrade-insecure-requests"
+        />
       </Head>
 
       <PagePanel>
