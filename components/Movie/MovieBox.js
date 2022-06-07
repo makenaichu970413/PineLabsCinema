@@ -4,6 +4,7 @@
 import Link from "next/link";
 import React, { useRef, useState, useEffect } from "react";
 import ReactStars from "react-stars";
+import Image from "next/image";
 // ####################################
 
 function MovieBox(props) {
@@ -46,6 +47,7 @@ function MovieBox(props) {
     >
       <div className="image">
         <img src={image} alt={`img-${data["id"]}`} />
+        {/* <Image src={image} alt={`img-${data["id"]}`} layout="fill" /> */}
       </div>
       <div className="content">
         <div className="movie">

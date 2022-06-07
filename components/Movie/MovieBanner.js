@@ -68,7 +68,7 @@ function MovieBanner(props) {
         <div className="video-box">
           <video
             id={"movie-trailer"}
-            src={"../../images/play-page/Jumanji.mp4"}
+            src={"/images/play-page/Jumanji.mp4"}
             controls={true}
           ></video>
 

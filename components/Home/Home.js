@@ -3,6 +3,7 @@
 // ####################################
 import React, { useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { useTranslation } from "next-i18next";
 // ####################################
 
@@ -19,7 +20,12 @@ function Home() {
     <section className="home" id="home">
       <div className="home-banner">
         <div className="home-img">
-          <img src="./images/home-background.png" />
+          <img src="/images/home-background.png" />
+          {/* <Image
+            src={"/images/home-background.png"}
+            alt={`home-img`}
+            layout="fill"
+          /> */}
         </div>
 
         <div className="home-content">
