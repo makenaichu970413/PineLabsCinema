@@ -9,7 +9,7 @@ module.exports = () => {
     env: {
       domain: "https://pinelabscinema.vercel.app",
       movieDB: {
-        apiDomain: "https://api.themoviedb.org/3",
+        apiDomain: "http://api.themoviedb.org/3",
         imgDomain: "https://image.tmdb.org/t/p/original",
         apiKey: "328c283cd27bd1877d9080ccb1604c91",
       },
