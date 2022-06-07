@@ -1,3 +1,5 @@
+const path = require("path");
+
 module.exports = {
   i18n: {
     locales: ["en", "zh", "ms"],
@@ -5,6 +7,7 @@ module.exports = {
     pages: {
       "*": "common",
     },
+    localePath: path.resolve("./public/locales"),
   },
   react: {
     useSuspense: false,
