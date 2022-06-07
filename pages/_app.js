@@ -32,6 +32,8 @@ function MyApp({ Component, pageProps }) {
 
   const data = {
     ogSiteName: "pinelabscinema.com",
+    description:
+      "PineLabs Cinemas (PLC) is a multiplex cinema operator & the leading cinema online Malaysia. Get movie showtimes, cinema location & buy movie tickets online here.",
     ogImage: {
       src: `${process.env.domain}/ogImage.jpg`,
       width: "1200",
@@ -45,7 +47,7 @@ function MyApp({ Component, pageProps }) {
         <title>PineLabs Cinema</title>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="description" content="Pinelabs Cinema" />
+        <meta name="description" content={data["description"]} />
         <link rel="icon" href="/fav-icon.png" />
         <meta
           property="og:site_name"
