@@ -3,6 +3,7 @@ const { i18n } = require("./next-i18next.config");
 module.exports = () => {
   return {
     reactStrictMode: true,
+
     i18n,
 
     env: {
@@ -16,7 +17,11 @@ module.exports = () => {
     },
 
     images: {
-      domains: ["image.tmdb.org", "pinelabscinema.vercel.app"],
+      domains: [
+        "image.tmdb.org",
+        "pinelabscinema.vercel.app",
+        "pinelabscinema-86vkgrkd0-makenaichu970413.vercel.app",
+      ],
     },
   };
 };
