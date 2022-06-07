@@ -1,0 +1,25 @@
+// ####################################
+// React && Plugins
+// ####################################
+import { useEffect, Fragement } from "react";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import Image from "next/image";
+
+// ####################################
+
+function MovieCast(props) {
+  const { data } = props;
+  const { i } = data;
+
+  return (
+    <div className="cast-box">
+      <div className="image">
+        <img src={`../../images/play-page/cast${i + 1}.jpg`} alt="cast-img" />
+      </div>
+      <span className="name">Dwayne Johnson</span>
+    </div>
+  );
+}
+
+export default MovieCast;

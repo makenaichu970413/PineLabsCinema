@@ -1,0 +1,25 @@
+{
+  "name": "cinema",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "aos": "^3.0.0-beta.6",
+    "next": "12.1.6",
+    "next-i18next": "^11.0.0",
+    "react": "18.1.0",
+    "react-dom": "18.1.0",
+    "react-stars": "^2.2.5",
+    "swiper": "^8.1.4",
+    "swr": "1.2.2"
+  },
+  "devDependencies": {
+    "eslint": "8.16.0",
+    "eslint-config-next": "12.1.6"
+  }
+}

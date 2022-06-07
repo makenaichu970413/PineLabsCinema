@@ -1,0 +1,16 @@
+{
+  "order": { "asc": "ascending", "desc": "descending", "title": "order" },
+  "search": {
+    "empty": "No movies found with keyword “{{keyword}}”",
+    "placeholder": "search movie",
+    "result": "There are {{number}} movies found with keyword “{{keyword}}”"
+  },
+  "sort": {
+    "original_title": "original title",
+    "popularity": "popularity",
+    "release_date": "release date",
+    "result": "There are {{number}} movies sorted by {{sort}} in {{order}} order`",
+    "revenue": "revenue",
+    "title": "sort by"
+  }
+}

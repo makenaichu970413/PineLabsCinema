@@ -1,0 +1,1 @@
+{"order":{"asc":"上升","desc":"下降","title":"顺序"},"search":{"empty":"没有找到关键字“ {{keyword}} ”的电影","placeholder":"搜索电影","result":"用关键字\"{{keyword}}\"找到了{{number}}部电影"},"sort":{"original_title":"原标题","popularity":"人气","release_date":"发布日期","result":"{{number}}部电影按{{sort}} {{order}} 排序","revenue":"票房","title":"排序方式"}}

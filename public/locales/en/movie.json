@@ -1,0 +1,12 @@
+{
+  "movie": {
+    "cast": "movie cast",
+    "date": "release date",
+    "duration": "duration",
+    "genres": "genres",
+    "info": "basic info",
+    "language": "language",
+    "minute": "minute",
+    "trailer": "watch the trailer"
+  }
+}
