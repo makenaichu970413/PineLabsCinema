@@ -1028,7 +1028,7 @@ main {
   display: none;
   font-size: 3.5rem;
   line-height: 3.5rem;
-  color: #fff;
+  color: var(--text-color-1);
   cursor: pointer;
   margin: 0px 1rem;
 }
@@ -1100,6 +1100,7 @@ main {
   width: 85%;
   margin: 0 auto;
   z-index: 200;
+  color: #293462;
   opacity: 0;
   pointer-events: none;
 }
@@ -1107,6 +1108,12 @@ main {
   display: flex;
   margin: 0 auto;
   width: 100%;
+  border-radius: 1rem;
+  border: 0.3rem solid var(--main-color);
+  background: #fff;
+}
+.navbar .search-form .searc-box input {
+  color: #293462;
 }
 .navbar .search-form.active {
   opacity: 1;

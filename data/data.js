@@ -7,7 +7,7 @@ export const sidebar = {
       icon: "bx bxs-hot",
     },
     {
-      href: "/movie/sort/order?sort=original_title.desc",
+      href: "/movie/sort/order?sort=release_date.desc",
       title: "side.explore",
       icon: "bx bx-compass",
     },

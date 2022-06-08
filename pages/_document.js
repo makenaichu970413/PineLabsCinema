@@ -14,6 +14,7 @@ class MyDocument extends Document {
             href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
           />
         </Head>
+
         <body>
           <Main />
           <NextScript />
