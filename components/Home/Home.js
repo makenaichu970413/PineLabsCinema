@@ -24,6 +24,7 @@ function Home() {
             src={"/Images/home-background.png"}
             alt={`home-img`}
             layout="fill"
+            unoptimized
           />
         </div>
 
