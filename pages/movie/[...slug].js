@@ -96,7 +96,7 @@ function MoviesFilter(props) {
     console.log("Slug Query: ", query);
     let res = {};
     if ("search" in query) {
-      res = await searchMovie({ page, keyword: query["search"] });
+      // res = await searchMovie({ page, keyword: query["search"] });
     } else if ("sort" in query) {
       res = await getDiscoverMovies({
         page,

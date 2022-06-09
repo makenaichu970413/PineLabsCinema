@@ -46,7 +46,12 @@ function MovieBox(props) {
       // data-aos-delay={delay}
     >
       <div className="image">
-        <Image src={image} alt={`movie-img-${data["id"]}`} layout="fill" />
+        <Image
+          src={image}
+          alt={`movie-img-${data["id"]}`}
+          layout="fill"
+          unoptimized
+        />
       </div>
       <div className="content">
         <div className="movie">
