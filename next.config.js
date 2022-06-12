@@ -7,6 +7,7 @@ module.exports = () => {
     i18n,
 
     env: {
+      SECRET: "a4895e4cbc2b102e4beb17ac19ed3fe8",
       domain: "https://pinelabscinema.vercel.app",
       movieDB: {
         apiDomain: "https://api.themoviedb.org/3",
