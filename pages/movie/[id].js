@@ -21,6 +21,7 @@ import MetaHead from "../../components/General/MetaHead";
 import Spinner from "../../components/General/Spinner";
 import MovieBanner from "../../components/Movie/MovieBanner";
 import MovieDetail from "../../components/Movie/MovieDetail";
+
 // ####################################
 
 // ####################################
@@ -39,7 +40,7 @@ export default function Movie(props) {
     return <Spinner />;
   }
 
-  console.log("movie: ", movie);
+  // console.log("movie: ", movie);
   const meta = {
     title: movie["title"],
     description: movie["title"],

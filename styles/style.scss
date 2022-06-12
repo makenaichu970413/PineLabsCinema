@@ -105,6 +105,7 @@ body {
   }
 
   &.light {
+    --main-color: #e79d0c;
     --bg-color-1: #fff;
     --bg-color-2: #eee;
     --text-color-1: #293462;
@@ -384,14 +385,18 @@ main {
     color: $lightBlue;
   }
 
-  .green {
-    color: $white;
-    background: #37af48;
+  &.green {
+    span {
+      color: $white;
+      background: #37af48;
+    }
   }
 
-  .red {
-    color: $white;
-    background: #f32424;
+  &.red {
+    span {
+      color: $white;
+      background: #f32424;
+    }
   }
 }
 
@@ -676,6 +681,19 @@ main {
             color: var(--main-color);
           }
         }
+      }
+    }
+
+    .movie-save {
+      font-size: 5rem;
+      color: $white;
+      position: absolute;
+      top: 2%;
+      right: 0.5%;
+      cursor: pointer;
+
+      &:hover {
+        color: var(--main-color);
       }
     }
   }
@@ -1251,7 +1269,8 @@ main {
     background: var(--transparent);
     border-radius: 4rem;
     margin: 0 2rem;
-    margin-right: 3rem;
+    // margin-right: 3rem;
+    margin-right: 0rem;
 
     input {
       width: 30rem;
@@ -1332,6 +1351,153 @@ main {
       height: 100%;
       object-fit: cover;
       object-position: center;
+    }
+  }
+
+  .btn {
+    margin: 0;
+    margin-left: 1rem;
+    margin-right: 3rem;
+  }
+}
+
+// =======================
+// Authentication
+// =======================
+.auth {
+  width: 40rem;
+  padding: 3rem 2rem;
+  border-radius: 1rem;
+  margin: 15vh auto 0;
+  background: var(--transparent);
+
+  h2 {
+    color: var(--text-color-1);
+    font-size: 3rem;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+    text-align: center;
+  }
+
+  .input-box {
+    position: relative;
+    width: 100%;
+    margin-top: 2rem;
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 5px 0;
+      margin: 1rem 0;
+      font-size: 2rem;
+      border-bottom: 2px solid var(--text-color-1);
+      outline: none;
+      resize: none;
+      text-transform: none;
+      transition: all 0.2s linear;
+      background: none;
+      color: var(--text-color-1);
+
+      &:focus ~ label,
+      &:valid ~ label {
+        color: var(--main-color);
+        font-size: 1.4rem;
+        transform: translateY(-20px);
+      }
+    }
+
+    label {
+      position: absolute;
+      left: 0;
+      padding: 5px 0;
+      margin: 10px 0;
+      font-size: 16px;
+      pointer-events: none;
+      color: var(--text-color-1);
+      transition: transform 0.2s linear;
+    }
+  }
+
+  .btn-box {
+    margin-top: 2rem;
+  }
+
+  .switch-auth {
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+    user-select: none;
+    text-align: center;
+    margin: 2rem auto 0;
+    span {
+      color: var(--main-color);
+      cursor: pointer;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+// =======================
+// User
+// =======================
+.user-movies {
+  width: 70%;
+  // border: 2px solid white;
+  margin: 3rem auto;
+
+  .movie-card {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    background: var(--transparent);
+    border-radius: 1rem;
+    overflow: hidden;
+    width: 60rem;
+    margin: 0rem auto 2rem;
+    box-shadow: $boxShadow;
+
+    .delete-movie {
+      position: absolute;
+      top: 0;
+      right: 0;
+      font-size: 5rem;
+      cursor: pointer;
+      &:hover {
+        color: #f32424;
+      }
+    }
+
+    .image {
+      position: relative;
+      width: 40%;
+      height: 30rem;
+      transition: transform 0.1s linear 0.2s;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .content {
+      width: 60%;
+      padding: 2rem 1rem 0;
+      // border: 2px solid white;
+
+      .title {
+        margin-bottom: 1rem;
+        font-size: 2.5rem;
+      }
+
+      .rating {
+        font-size: 2rem;
+        // border: 2px solid white;
+      }
     }
   }
 }
@@ -1563,6 +1729,31 @@ main {
             font-size: 1.3rem;
           }
         }
+      }
+    }
+  }
+
+  .user-movies {
+    width: 100%;
+    // border: 2px solid white;
+
+    .movie-card {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      width: 100%;
+      margin-bottom: 2.5rem;
+
+      .image {
+        position: relative;
+        width: 100%;
+        height: 30rem;
+      }
+      .content {
+        width: 100%;
+        padding: 1.5rem;
+        // border: 2px solid white;
       }
     }
   }

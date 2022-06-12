@@ -12,7 +12,7 @@ export const sidebar = {
       icon: "bx bx-compass",
     },
     { href: "/movie", title: "side.movies", icon: "bx bx-movie-play" },
-    { href: "/", title: "side.fav", icon: "bx bx-book-heart" },
+    { href: "/user/profile", title: "side.fav", icon: "bx bx-book-heart" },
   ],
 
   setting: {

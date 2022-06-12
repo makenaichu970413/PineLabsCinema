@@ -13,6 +13,12 @@ module.exports = () => {
         imgDomain: "https://image.tmdb.org/t/p/original",
         apiKey: "328c283cd27bd1877d9080ccb1604c91",
       },
+      mongoDB: {
+        username: "makenaichu970413",
+        password: "Chu970413045109",
+        clustername: "cluster0",
+        database: "pinelabs_cinema",
+      },
       redirect: "https://www.cathaycineplexes.com.sg/",
     },
 

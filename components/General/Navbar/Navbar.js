@@ -8,6 +8,8 @@ import {
   handleOpenSearchForm,
   handleCloseSearchForm,
 } from "../../../utils/helper";
+import { useSession, signOut } from "next-auth/react";
+import { useRouter } from "next/router";
 // ####################################
 
 // ####################################
@@ -19,6 +21,26 @@ import UserImage from "./UserImage";
 // ####################################
 
 function Navbar() {
+  const router = useRouter();
+  const { data: session, status } = useSession();
+  const isLogin = status === "authenticated";
+
+  // {
+  //   "user": {
+  //      "email": "makenaichuweb@gmail.com"
+  //   },
+  //   "expires": "2022-07-11T16:51:46.228Z"
+  // }
+  // status:  authenticated
+
+  const handleLoginClick = (e) => {
+    router.push("/auth/login");
+  };
+
+  const handleLogoutClick = (e) => {
+    signOut();
+  };
+
   return (
     <div className="navbar">
       <div className="nav-left">
@@ -42,7 +64,21 @@ function Navbar() {
 
         <Search />
 
-        <UserImage />
+        {!isLogin && (
+          <div className="btn" onClick={handleLoginClick}>
+            Login
+          </div>
+        )}
+
+        {isLogin && (
+          <>
+            <div className="btn" onClick={handleLogoutClick}>
+              Logout
+            </div>
+
+            <UserImage />
+          </>
+        )}
       </div>
     </div>
   );

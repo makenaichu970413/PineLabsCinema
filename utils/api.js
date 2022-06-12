@@ -87,6 +87,77 @@ export async function getLanguages() {
   }
 }
 
+// ####################################
+// API Routes
+// ####################################
+export async function getUserMovies(obj) {
+  const response = await fetch("/api/user/getMovies", {
+    method: "POST",
+    body: JSON.stringify(obj),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+
+  const data = await response.json();
+  if (!response.ok) {
+    throw new Error(data.message || "Something went wrong!");
+  }
+
+  return data;
+}
+
+export async function postMovie(obj) {
+  const response = await fetch("/api/user/postMovie", {
+    method: "POST",
+    body: JSON.stringify(obj),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+
+  const data = await response.json();
+  if (!response.ok) {
+    throw new Error(data.message || "Something went wrong!");
+  }
+
+  return data;
+}
+
+export async function deleteMovie(obj) {
+  const response = await fetch("/api/user/deleteMovie", {
+    method: "POST",
+    body: JSON.stringify(obj),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+
+  const data = await response.json();
+  if (!response.ok) {
+    throw new Error(data.message || "Something went wrong!");
+  }
+
+  return data;
+}
+
+export async function createUser(obj) {
+  const response = await fetch("/api/auth/signup", {
+    method: "POST",
+    body: JSON.stringify(obj),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+
+  const data = await response.json();
+  if (!response.ok) {
+    throw new Error(data.message || "Something went wrong!");
+  }
+
+  return data;
+}
+
 // Sorting Values: ,
 // popularity.asc, popularity.desc,
 // release_date.asc, release_date.desc,

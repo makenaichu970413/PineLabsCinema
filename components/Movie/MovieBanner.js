@@ -14,6 +14,12 @@ import {
 // ####################################
 
 // ####################################
+// COMPONENTS
+// ####################################
+import MovieSave from "../../components/Movie/MovieSave";
+// ####################################
+
+// ####################################
 // DATA
 // ####################################
 import { movie } from "../../data/data";
@@ -67,6 +73,8 @@ function MovieBanner(props) {
           <i className="bx bx-right-arrow" onClick={handlePlayVideoClick}></i>
           <span>{t(movie["trailer"])}</span>
         </a>
+
+        <MovieSave data={data} />
       </div>
 
       <div className="play-video">
