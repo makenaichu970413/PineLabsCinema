@@ -6,20 +6,27 @@ async function handler(req, res) {
     const { email, password, rePassword } = req.body;
     // console.log("data: ", req.body);
 
-    if (password != rePassword) {
-      res.status(421).json({
-        message: "The password and confirmed password are not same.",
+    if (!email.includes("@")) {
+      res.status(201).json({
+        status: 422,
+        message: "Invalid Input - email address should be include '@'.",
       });
       return;
     }
 
-    const verify =
-      !email || !email.includes("@") || !password || password.trim().length < 7;
-
-    if (verify) {
-      res.status(422).json({
+    if (password.trim().length < 7) {
+      res.status(201).json({
+        status: 422,
         message:
           "Invalid Input - password should also be at least 7 characters long.",
+      });
+      return;
+    }
+
+    if (password != rePassword) {
+      res.status(201).json({
+        status: 422,
+        message: "The password and confirmed password are not same.",
       });
       return;
     }
@@ -28,8 +35,9 @@ async function handler(req, res) {
     try {
       client = await connectToDB();
     } catch (error) {
-      res.status(500).json({
-        msg: `Could not connect to database. ${error.message}`,
+      res.status(201).json({
+        status: 500,
+        message: `Could not connect to database. ${error.message}`,
       });
       return;
     }
@@ -43,8 +51,9 @@ async function handler(req, res) {
     });
 
     if (existingUser) {
-      res.status(422).json({
-        message: "Email exists already!",
+      res.status(201).json({
+        status: 422,
+        message: "Email exists already.",
       });
       client.close();
       return;
@@ -56,8 +65,11 @@ async function handler(req, res) {
       password: hashedPassword,
     });
 
-    res.status(201).json({ msg: "User created successfully!" });
+    res
+      .status(201)
+      .json({ status: 201, message: "User created successfully!" });
     client.close();
+    return;
   }
 }
 

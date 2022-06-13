@@ -1,1 +1,20 @@
-{"btn":{"book":"book movie","more":"view more"},"credit":"all right reserved","home":{"more":"Movies & Shows","popular":"Popular Movies"},"side":{"dark":"dark","explore":"explore","fav":"fauvorite","home":"home","light":"light","movies":"movies","trend":"trending"}}
+{
+  "btn": {
+    "book": "book movie",
+    "more": "view more",
+    "send": "send",
+    "view": "view"
+  },
+  "credit": "all right reserved",
+  "home": { "more": "Movies & Shows", "popular": "Popular Movies" },
+  "languages": { "en": "english", "ms": "malay", "zh": "mandarin" },
+  "side": {
+    "dark": "dark",
+    "explore": "explore",
+    "fav": "fauvorite",
+    "home": "home",
+    "light": "light",
+    "movies": "movies",
+    "trend": "trending"
+  }
+}

@@ -3,7 +3,10 @@
 // ####################################
 import { Fragment, useEffect } from "react";
 import { useRouter } from "next/router";
-import { handleCloseMenuClick } from "../../utils/helper";
+import {
+  handleCloseMenuClick,
+  handleCloseUserNavClick,
+} from "../../utils/helper";
 // ####################################
 
 // ####################################
@@ -13,12 +16,26 @@ import Navbar from "./Navbar/Navbar";
 import Sidebar from "./Sidebar/Sidebar";
 import BackTop from "./BackTop";
 import Footer from "./Footer";
+import Message from "./Message";
+import UserNav from "../User/UserNav";
+// ####################################
+
+// ####################################
+// REDUX
+// ####################################
+import { useStateValue } from "../../redux/StateProvider";
 // ####################################
 
 import React from "react";
 
 function PagePanel(props) {
+  const [{ message }, dispatch] = useStateValue();
   const { children } = props;
+
+  const handleOutClick = () => {
+    handleCloseMenuClick();
+    handleCloseUserNavClick();
+  };
 
   return (
     <Fragment>
@@ -26,13 +43,17 @@ function PagePanel(props) {
 
       <Sidebar />
 
-      <div onClick={handleCloseMenuClick}>
+      <div className="main" onClick={handleOutClick}>
+        <UserNav />
+
         <main>{children}</main>
 
         <BackTop />
 
         <Footer />
       </div>
+
+      <Message />
     </Fragment>
   );
 }

@@ -2,10 +2,10 @@
 // React && Plugins
 // ####################################
 import { useEffect, Fragment, useState } from "react";
-import { useSession, getSession, signOut } from "next-auth/react";
 import { useRouter } from "next/router";
-import { formatDate } from "../../utils/helper";
-import { findJsonInArr } from "../../utils/helper";
+import { formatDate, findJsonInArr } from "../../utils/helper";
+import Link from "next/link";
+import { useTranslation } from "next-i18next";
 // ####################################
 
 // ####################################
@@ -21,17 +21,34 @@ import MovieCard from "./MovieCard";
 import { getUserMovies } from "../../utils/api";
 // ####################################
 
+// ####################################
+// REDUX
+// ####################################
+import { useStateValue } from "../../redux/StateProvider";
+// ####################################
+
+// ####################################
+// Data
+// ####################################
+import { user } from "../../data/data";
+// ####################################
+
 function MoviesListing(props) {
   const [loading, setLoading] = useState(true);
   const [movies, setMovies] = useState(null);
   const [docID, setDocID] = useState(null);
   const { session } = props;
+  const [{}, dispatch] = useStateValue();
+  const { t, i18n } = useTranslation();
 
   const initial = async () => {
     const res = await getUserMovies({ userID: session.user.name });
     if (res["status"] === 201) {
-      setMovies(res["result"]["movies"]);
-      setDocID(res["result"]["_id"]);
+      if (res["result"]) {
+        setMovies(res["result"]["movies"]);
+        setDocID(res["result"]["_id"]);
+        dispatch({ type: "SET_USER", user: res["result"] });
+      }
     }
     setLoading(false);
     console.log("res: ", res);
@@ -41,19 +58,11 @@ function MoviesListing(props) {
     initial();
   }, [loading]);
 
-  useEffect(() => {
-    // console.log("movies: ", movies);
-
-    if (movies) {
-      findJsonInArr(movies, "id", 857132);
-    }
-  }, [movies]);
-
   if (loading) {
     return <Spinner />;
   }
 
-  if (movies.length) {
+  if (movies && movies.length) {
     return (
       <div className="user-movies">
         {movies.map((item, i) => {
@@ -65,6 +74,17 @@ function MoviesListing(props) {
             />
           );
         })}
+      </div>
+    );
+  } else {
+    return (
+      <div className="user-no-movies">
+        <i className="bx bx-search-alt"></i>
+        <h2>{t(user["movie"]["h2"])}</h2>
+
+        <Link href="/movie">
+          <a className="btn">{t(user["movie"]["btn"]["no"])}</a>
+        </Link>
       </div>
     );
   }

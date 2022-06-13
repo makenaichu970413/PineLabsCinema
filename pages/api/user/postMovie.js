@@ -12,8 +12,9 @@ async function handler(req, res) {
     try {
       client = await connectToDB();
     } catch (error) {
-      res.status(500).json({
-        msg: `Could not connect to database. ${error.message}`,
+      res.status(201).json({
+        status: 500,
+        message: `Could not connect to database. ${error.message}`,
       });
       return;
     }
@@ -52,4 +53,3 @@ async function handler(req, res) {
 }
 
 export default handler;
-

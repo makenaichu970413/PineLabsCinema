@@ -47,7 +47,7 @@ export async function getStaticProps({ locale }) {
     props: {
       genres,
       movies,
-      ...(await serverSideTranslations(locale, ["common", "movie", "movies"])),
+      ...(await serverSideTranslations(locale, process.env.locales)),
     },
 
     revalidate: 1800,

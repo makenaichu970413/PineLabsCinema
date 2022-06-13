@@ -6,6 +6,8 @@ import Head from "next/head";
 import AOS from "aos";
 import { appWithTranslation } from "next-i18next";
 import { SessionProvider } from "next-auth/react";
+import { StateProvider } from "../redux/StateProvider";
+import reducer, { initialState } from "../redux/Reducer";
 // ####################################
 
 // ####################################
@@ -44,35 +46,43 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <SessionProvider session={pageProps.session}>
-      <Fragment>
-        <Head>
-          <title>PineLabs Cinema</title>
-          <meta charSet="UTF-8" />
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <meta name="description" content={data["description"]} />
-          <link rel="icon" href="/fav-icon.png" />
-          <meta
-            property="og:site_name"
-            content={data["ogSiteName"]}
-            key="ogsitename"
-          />
-          <meta
-            property="og:image"
-            content={data["ogImage"]["src"]}
-            key="ogimage"
-            itemProp="image"
-          />
-          <meta property="og:image:width" content={data["ogImage"]["width"]} />
-          <meta
-            property="og:image:height"
-            content={data["ogImage"]["height"]}
-          />
-        </Head>
+      <StateProvider initialState={initialState} reducer={reducer}>
+        <Fragment>
+          <Head>
+            <title>PineLabs Cinema</title>
+            <meta charSet="UTF-8" />
+            <meta
+              name="viewport"
+              content="width=device-width, initial-scale=1"
+            />
+            <meta name="description" content={data["description"]} />
+            <link rel="icon" href="/fav-icon.png" />
+            <meta
+              property="og:site_name"
+              content={data["ogSiteName"]}
+              key="ogsitename"
+            />
+            <meta
+              property="og:image"
+              content={data["ogImage"]["src"]}
+              key="ogimage"
+              itemProp="image"
+            />
+            <meta
+              property="og:image:width"
+              content={data["ogImage"]["width"]}
+            />
+            <meta
+              property="og:image:height"
+              content={data["ogImage"]["height"]}
+            />
+          </Head>
 
-        <PagePanel>
-          <Component {...pageProps} />
-        </PagePanel>
-      </Fragment>
+          <PagePanel>
+            <Component {...pageProps} />
+          </PagePanel>
+        </Fragment>
+      </StateProvider>
     </SessionProvider>
   );
 }

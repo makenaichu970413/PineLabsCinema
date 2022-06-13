@@ -65,3 +65,46 @@ export const common = {
   heading: { more: "home.more", popular: "home.popular" },
   credit: "credit",
 };
+
+export const auth = {
+  form: {
+    title: { login: "auth:form.title.login", signup: "auth:form.title.signup" },
+
+    a: {
+      login: "auth:form.a.login",
+      signup: "auth:form.a.signup",
+    },
+
+    p: {
+      login: "auth:form.p.login",
+      signup: "auth:form.p.signup",
+    },
+
+    input: {
+      email: "auth:form.input.email",
+      password: "auth:form.input.password",
+      rePassword: "auth:form.input.rePassword",
+    },
+  },
+
+  btn: {
+    send: "common:btn.send",
+  },
+};
+
+export const user = {
+  movie: {
+    btn: {
+      view: "common:btn.view",
+      no: "user:movie.no.btn",
+    },
+    h2: "user:movie.no.h2",
+  },
+
+  heading: "user:profile.heading",
+
+  nav: {
+    logout: "user:nav.logout",
+    profile: "user:nav.profile",
+  },
+};

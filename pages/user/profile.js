@@ -7,6 +7,7 @@ import { useEffect, Fragment, useState } from "react";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useSession, getSession, signOut } from "next-auth/react";
 import { useRouter } from "next/router";
+import { useTranslation } from "next-i18next";
 // ####################################
 
 // ####################################
@@ -14,10 +15,19 @@ import { useRouter } from "next/router";
 // ####################################
 import MoviesListing from "../../components/User/MoviesListing";
 import Heading from "../../components/General/Heading";
+import Message from "../../components/General/Message";
 // ####################################
 
-function profile(props) {
+// ####################################
+// Data
+// ####################################
+import { user } from "../../data/data";
+// ####################################
+
+function Profile(props) {
   const { session } = props;
+  const { t, i18n } = useTranslation();
+
   //   const [loading, setLoading] = useState(true);
   //   const [loadedSession, setLoadedSession] = useState();
   //   const { data: session, status } = useSession();
@@ -40,14 +50,14 @@ function profile(props) {
 
   return (
     <Fragment>
-      <Heading data={"my fauvorite movies"}></Heading>
+      <Heading data={t(user["heading"])}></Heading>
 
       <MoviesListing session={session} />
     </Fragment>
   );
 }
 
-export default profile;
+export default Profile;
 
 export async function getServerSideProps({ locale, req }) {
   const session = await getSession({ req });
@@ -64,7 +74,7 @@ export async function getServerSideProps({ locale, req }) {
   return {
     props: {
       session,
-      ...(await serverSideTranslations(locale, ["common", "movie", "movies"])),
+      ...(await serverSideTranslations(locale, process.env.locales)),
     },
   };
 }

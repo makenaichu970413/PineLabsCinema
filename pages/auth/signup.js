@@ -36,7 +36,7 @@ export async function getServerSideProps({ locale, req }) {
 
   return {
     props: {
-      ...(await serverSideTranslations(locale, ["common", "movie", "movies"])),
+      ...(await serverSideTranslations(locale, process.env.locales)),
     },
   };
 }

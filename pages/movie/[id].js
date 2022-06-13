@@ -21,7 +21,7 @@ import MetaHead from "../../components/General/MetaHead";
 import Spinner from "../../components/General/Spinner";
 import MovieBanner from "../../components/Movie/MovieBanner";
 import MovieDetail from "../../components/Movie/MovieDetail";
-
+import Message from "../../components/General/Message";
 // ####################################
 
 // ####################################
@@ -60,6 +60,7 @@ export default function Movie(props) {
   return (
     <>
       <MetaHead data={meta} />
+
       <div className="movie-detail">
         <MovieBanner data={movie} />
 
@@ -104,7 +105,7 @@ export async function getStaticProps(context) {
   return {
     props: {
       movie,
-      ...(await serverSideTranslations(locale, ["common", "movie", "movies"])),
+      ...(await serverSideTranslations(locale, process.env.locales)),
     },
     revalidate: 900,
   };

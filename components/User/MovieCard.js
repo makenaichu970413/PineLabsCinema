@@ -6,22 +6,28 @@ import React, { useRef, useState, useEffect } from "react";
 import ReactStars from "react-stars";
 import Image from "next/image";
 import { useRouter } from "next/router";
+import { useTranslation } from "next-i18next";
 // ####################################
 
 // ####################################
-// API
+// Components
 // ####################################
-import { deleteMovie } from "../../utils/api";
+import MovieDelete from "./MovieDelete";
+// ####################################
+
+// ####################################
+// Data
+// ####################################
+import { user } from "../../data/data";
 // ####################################
 
 function MovieCard(props) {
   const route = useRouter();
+  const { t, i18n } = useTranslation();
   const { data, setLoading } = props;
   const image = data["poster_path"]
     ? `${process.env.movieDB.imgDomain}/${data["poster_path"]}`
     : "/Images/no-img.jpg";
-
-  //   console.log("movie: ", data);
 
   function Tags() {
     return (
@@ -45,23 +51,8 @@ function MovieCard(props) {
     );
   }
 
-  const handleDeleteClick = async () => {
-    let req = { docID: data["docID"], movieID: data["id"] };
-    console.log("req: ", req);
-    const res = await deleteMovie(req);
-    console.log("res: ", res);
-    if (res["status"] === 201) {
-      //   route.push("/user/profile");
-      setLoading(true);
-    }
-  };
-
   return (
     <div className="movie-card">
-      <div className="delete-movie" onClick={handleDeleteClick}>
-        <i className="bx bxs-tag-x"></i>
-      </div>
-
       <div className="image">
         <Image
           src={image}
@@ -89,9 +80,14 @@ function MovieCard(props) {
           half={true}
         />
 
-        <Link href={`/movie/${data["id"]}`}>
-          <a className="btn">view</a>
-        </Link>
+        <div className="btn-box">
+          <Link href={`/movie/${data["id"]}`}>
+            <a className="btn">{t(user["movie"]["btn"]["view"])}</a>
+          </Link>
+
+          <MovieDelete data={data} setLoading={setLoading} />
+        </div>
+
         {/* <p>{data["overview"]}</p> */}
       </div>
     </div>

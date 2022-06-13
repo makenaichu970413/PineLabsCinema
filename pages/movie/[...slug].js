@@ -149,7 +149,7 @@ export async function getServerSideProps(context) {
       data: data1,
       genres,
       query,
-      ...(await serverSideTranslations(locale, ["common", "movie", "movies"])),
+      ...(await serverSideTranslations(locale, process.env.locales)),
     },
   };
 }

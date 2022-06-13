@@ -11,8 +11,9 @@ async function handler(req, res) {
     try {
       client = await connectToDB();
     } catch (error) {
-      res.status(500).json({
-        msg: `Could not connect to database. ${error.message}`,
+      res.status(201).json({
+        status: 500,
+        message: `Could not connect to database. ${error.message}`,
       });
       return;
     }
@@ -24,7 +25,7 @@ async function handler(req, res) {
       userID: userID,
     });
 
-    res.status(201).json({ status: 201, msg: "Get user movies!", result });
+    res.status(201).json({ status: 201, message: "Get user movies!", result });
     client.close();
   }
 }

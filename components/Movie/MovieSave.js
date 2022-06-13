@@ -4,7 +4,7 @@
 import { useEffect, Fragment, useState } from "react";
 import { useSession, getSession, signOut } from "next-auth/react";
 import { useRouter } from "next/router";
-import { formatDate } from "../../utils/helper";
+import { findJsonInArr } from "../../utils/helper";
 // ####################################
 
 // ####################################
@@ -13,8 +13,15 @@ import { formatDate } from "../../utils/helper";
 import { postMovie } from "../../utils/api";
 // ####################################
 
+// ####################################
+// REDUX
+// ####################################
+import { useStateValue } from "../../redux/StateProvider";
+// ####################################
+
 function MovieSave(props) {
   // const { data: session, status } = useSession();
+  const [{ user }, dispatch] = useStateValue();
   const router = useRouter();
   const { data } = props;
   const {
@@ -27,7 +34,7 @@ function MovieSave(props) {
   } = data;
 
   const handleSaveMovie = () => {
-    getSession().then((session) => {
+    getSession().then(async (session) => {
       if (!session) {
         router.push("/auth/login");
       } else {
@@ -43,10 +50,31 @@ function MovieSave(props) {
           created_date: Date.now(),
         };
         const req = { userID: session.user.name, movie: newMovie };
-        postMovie(req);
+        dispatch({
+          type: "SET_MESSAGE",
+          message: { status: 0, message: null },
+        });
+        const res = await postMovie(req);
+        dispatch({ type: "SET_MESSAGE", message: res });
       }
     });
   };
+
+  const initial = () => {
+    if (user) {
+      const { index, obj } = findJsonInArr(user["movies"], "id", id);
+      console.log("index: ", index);
+
+      if (index > -1) {
+        const saveBtn = document.querySelector(".movie-save");
+        saveBtn.classList.add("active");
+      }
+    }
+  };
+
+  useEffect(() => {
+    initial();
+  }, []);
 
   return (
     <div className="movie-save" onClick={handleSaveMovie}>

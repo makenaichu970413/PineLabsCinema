@@ -17,6 +17,7 @@ export const handleOpenMenuClick = (e = null) => {
   btn.classList.add("active");
   menu.classList.add("active");
   bars.classList.add("active");
+  handleCloseUserNavClick();
 };
 
 export const handleCloseSearchForm = (e = null) => {
@@ -45,6 +46,17 @@ export const handleCloseVideoClick = (e = null) => {
   const video = document.querySelector("#movie-trailer");
   videoBox.classList.remove("active");
   video.pause();
+};
+
+export const handleOpenUserNavClick = (e = null) => {
+  const userNav = document.querySelector(".user-nav");
+  userNav.classList.add("active");
+  handleCloseMenuClick();
+};
+
+export const handleCloseUserNavClick = (e = null) => {
+  const userNav = document.querySelector(".user-nav");
+  userNav.classList.remove("active");
 };
 
 // ####################################
@@ -90,4 +102,8 @@ export function findJsonInArr(data, search, value) {
   // console.log(result);
 
   return result;
+}
+
+export function delay(time = 1000) {
+  return new Promise((resolve) => setTimeout(resolve, time));
 }

@@ -10,6 +10,7 @@ import {
 } from "../../../utils/helper";
 import { useSession, signOut } from "next-auth/react";
 import { useRouter } from "next/router";
+import { delay } from "../../../utils/helper";
 // ####################################
 
 // ####################################
@@ -17,14 +18,21 @@ import { useRouter } from "next/router";
 // ####################################
 import Logo from "./Logo";
 import Search from "./Search";
-import UserImage from "./UserImage";
+import UserImage from "../../User/UserImage";
+import UserNav from "../../User/UserNav";
+import UserLogin from "../../User/UserLogin";
+// ####################################
+
+// ####################################
+// REDUX
+// ####################################
+import { useStateValue } from "../../../redux/StateProvider";
 // ####################################
 
 function Navbar() {
   const router = useRouter();
   const { data: session, status } = useSession();
   const isLogin = status === "authenticated";
-
   // {
   //   "user": {
   //      "email": "makenaichuweb@gmail.com"
@@ -32,14 +40,6 @@ function Navbar() {
   //   "expires": "2022-07-11T16:51:46.228Z"
   // }
   // status:  authenticated
-
-  const handleLoginClick = (e) => {
-    router.push("/auth/login");
-  };
-
-  const handleLogoutClick = (e) => {
-    signOut();
-  };
 
   return (
     <div className="navbar">
@@ -64,21 +64,9 @@ function Navbar() {
 
         <Search />
 
-        {!isLogin && (
-          <div className="btn" onClick={handleLoginClick}>
-            Login
-          </div>
-        )}
+        {!isLogin && <UserLogin />}
 
-        {isLogin && (
-          <>
-            <div className="btn" onClick={handleLogoutClick}>
-              Logout
-            </div>
-
-            <UserImage />
-          </>
-        )}
+        {isLogin && <UserImage />}
       </div>
     </div>
   );

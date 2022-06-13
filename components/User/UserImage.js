@@ -4,21 +4,19 @@
 import React, { useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-
+import { handleOpenUserNavClick } from "../../utils/helper";
 // ####################################
 
 function UserImage() {
   return (
-    <Link href="/">
-      <div className="user-image">
-        <Image
-          src="/Images/user-img.jpeg"
-          alt="user-img"
-          layout="fill"
-          unoptimized
-        />
-      </div>
-    </Link>
+    <div className="user-image" onClick={handleOpenUserNavClick}>
+      <Image
+        src="/Images/user-img.jpeg"
+        alt="user-img"
+        layout="fill"
+        unoptimized
+      />
+    </div>
   );
 }
 

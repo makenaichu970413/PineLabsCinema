@@ -1,0 +1,10 @@
+{
+  "movie": {
+    "no": {
+      "btn": "go to movies",
+      "h2": "Oops! No movies found in your profile, you can add your favourite movie into your list."
+    }
+  },
+  "nav": { "logout": "logout", "profile": "profile" },
+  "profile": { "heading": "my fauvorite movies" }
+}

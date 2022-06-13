@@ -21,6 +21,8 @@ module.exports = () => {
         database: "pinelabs_cinema",
       },
       redirect: "https://www.cathaycineplexes.com.sg/",
+
+      locales: ["common", "movie", "movies", "auth", "user"],
     },
 
     images: {
