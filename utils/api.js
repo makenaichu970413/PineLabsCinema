@@ -1,18 +1,17 @@
+// ####################################
+// Movies
+// ####################################
 async function getData(url) {
   try {
     const response = await fetch(url);
     const data = await response.json();
-    // console.log("APIdata: ", response);
 
     return { status: 200, msg: "success", result: data };
-  } catch (error) {
+  } catch (e) {
     return { status: 401, msg: `ERROR: ${error}`, result: null };
   }
 }
 
-// ####################################
-// Movies
-// ####################################
 export async function getDiscoverMovies({
   page = 1,
   sort = "popularity.desc",
@@ -42,7 +41,7 @@ export async function getMovieByID({ ID }) {
 
 export async function searchMovie({ keyword, page = 1 }) {
   // https://developers.themoviedb.org/3/search/search-movies
-  const endpoint = `${process.env.movieDB.apiDomain}/search/movie/`;
+  const endpoint = `${process.env.movieDB.apiDomain}/search/movie`;
   const params = `&query=${keyword}&page=${page}`;
   const url = `${endpoint}?api_key=${process.env.movieDB.apiKey}${params}`;
   return getData(url);

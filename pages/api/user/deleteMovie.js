@@ -5,7 +5,7 @@ import { findJsonInArr } from "../../../utils/helper";
 async function handler(req, res) {
   if (req.method === "POST") {
     const { docID, movieID } = req.body;
-    console.log("req: ", req.body);
+    // console.log("req: ", req.body);
 
     let client;
     try {

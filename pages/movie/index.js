@@ -43,7 +43,7 @@ export default function Movies(props) {
 
   useEffect(() => {
     if (load) {
-      console.log("PAGE: ", page);
+      // console.log("PAGE: ", page);
       loadMoreData();
       setLoad(false);
     }
@@ -53,7 +53,7 @@ export default function Movies(props) {
     const data = await getTrendingMovies({ page: page });
     const movies = data["result"] ? data["result"]["results"] : null;
     if (movies) {
-      console.log("movie: ", movies);
+      // console.log("movie: ", movies);
       setMovies((oldMovies) => {
         return [...oldMovies, ...movies];
       });

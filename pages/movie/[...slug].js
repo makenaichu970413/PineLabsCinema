@@ -74,7 +74,7 @@ function MoviesFilter(props) {
 
   useEffect(() => {
     if (load) {
-      console.log("PAGE: ", page);
+      // console.log("PAGE: ", page);
       loadMoreData();
       setLoad(false);
     }
@@ -93,7 +93,7 @@ function MoviesFilter(props) {
   };
 
   const loadMoreData = async () => {
-    console.log("Slug Query: ", query);
+    // console.log("Slug Query: ", query);
     let res = {};
     if ("search" in query) {
       // res = await searchMovie({ page, keyword: query["search"] });
@@ -106,7 +106,7 @@ function MoviesFilter(props) {
 
     const movies = "result" in res ? res["result"]["results"] : null;
     if (movies) {
-      console.log("movie: ", movies);
+      // console.log("movie: ", movies);
       setMovies((oldMovies) => {
         return [...oldMovies, ...movies];
       });

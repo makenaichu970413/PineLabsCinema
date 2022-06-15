@@ -38,7 +38,7 @@ function MovieSave(props) {
       if (!session) {
         router.push("/auth/login");
       } else {
-        console.log(data);
+        // console.log(data);
         const newMovie = {
           id,
           original_title,
@@ -63,7 +63,7 @@ function MovieSave(props) {
   const initial = () => {
     if (user) {
       const { index, obj } = findJsonInArr(user["movies"], "id", id);
-      console.log("index: ", index);
+      // console.log("index: ", index);
 
       if (index > -1) {
         const saveBtn = document.querySelector(".movie-save");

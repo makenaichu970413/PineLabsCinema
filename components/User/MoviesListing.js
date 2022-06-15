@@ -51,7 +51,7 @@ function MoviesListing(props) {
       }
     }
     setLoading(false);
-    console.log("res: ", res);
+    // console.log("res: ", res);
   };
 
   useEffect(() => {

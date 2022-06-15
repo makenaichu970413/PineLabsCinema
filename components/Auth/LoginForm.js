@@ -46,7 +46,7 @@ function LoginForm() {
       email: email,
       password: password,
     });
-    console.log("result: ", result);
+    // console.log("result: ", result);
 
     let res;
     if (!result.error) {

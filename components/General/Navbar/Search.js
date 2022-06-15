@@ -20,7 +20,7 @@ function Search() {
 
   const handleOnKeyDown = (e) => {
     if (e.keyCode === 13 && keyword && keyword != "") {
-      console.log("Down Enter: ", keyword);
+      // console.log("Down Enter: ", keyword);
       handleOnSearch();
     }
     return false;

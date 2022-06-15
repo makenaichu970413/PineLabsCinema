@@ -18,7 +18,7 @@ function MovieDelete(props) {
 
   const handleDeleteClick = async () => {
     let req = { docID: data["docID"], movieID: data["id"] };
-    console.log("req: ", req);
+    // console.log("req: ", req);
 
     dispatch({ type: "SET_MESSAGE", message: { status: 0, message: null } });
     const res = await deleteMovie(req);

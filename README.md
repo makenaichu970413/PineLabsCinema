@@ -1,74 +1,55 @@
-## Fave Technical Assignment
+## 🔥Fave Technical Assignment (PineLabs Cinema) <br /> <br />
 
-### Introduction
-This assignment helps us better understand your ability to solve problems and fulfil task requirements with technical solutions. We would like to get an impression of how you write code in the real world. We will be evaluating your communication skills, development capabilities, and your interpretation of what good, clean, production-ready code should look like.
+### 📖Introduction
+The assessment website are named as "PineLabs Cinema" and has been deployed into "Vercel" free hosting service with the <br />
+URL: (https://pinelabscinema.vercel.app/). Feel free to visit the website whenever you want🚀. <br /> <br />
 
-### Scenario
-Cinema operators such as Cathay are one of the most popular merchants we have in Fave. We want to build an app to help our users discover movies easily.
+### ⚙️Setup & Requirements
 
-### Requirements
-Create a standalone movie app / mobile web(responsive UI) with the following screens:
+***1. Create the NextJS App***
+- Create the NextJS App by run command: ```npx create-next-app makenaichu-assessment```
+- After installtion completed, open the "makenaichu-assessment" folder by Visual Studio Code. 
 
-### **Home screen with list of available movies**
+***2. Download Source Code from GitHub***
+- Download GitHub source code as "ZIP" file and extract it.
+- Copy the extracted files into "makenaichu-assessment" folder, and paste the extracted files by replace the existing files.
 
-- Ordered by release date (default), alphabetical, rating - can use dropdown 
-- Pull to refresh
-- Load when scrolled to bottom
-- Each movie to include:
-  - Poster/Backdrop image
-  - Title
-  - Popularity
-    
-### **Detail screen**
-Movie details should have the following:
-- Synopsis
-- Genres
-- Language
-- Duration
-- Book the movie (simulate opening of this [link](https://www.cathaycineplexes.com.sg/) in a web view)
+***2. Install Node Version (16.13.1)***
+- Install the Node Version of "16.13.1" by run command: ```nvm install 16.13.1```
+- Use the installed Node Version of "16.13.1" by run command: ```nvm use 16.13.1```
+- Click "yes" when prompt window "Allow the app make changes to your device".
 
-### **Frontend Design**
-It is up to you to design the UI. Simple is good.
+***3. Install Reuired Dependencies***
+- Install the dependencies package by run command: ```npm install```
 
-### **Backend**
-Use the API from [TMDb](https://developers.themoviedb.org/3/getting-started/introduction) as your data source.
+***4. Start NextJS Project***
+- Start the project in development mode by run command: ```npm run dev```
+- Open the started project by given URL, Eg: ```http://localhost:3000``` <br /> <br />
 
-You can use our API Key: `328c283cd27bd1877d9080ccb1604c91`
-  
-**Sample requests:**
 
-Listing
+### 💻Assessment Additional Features
 
-```
-http://api.themoviedb.org/3/discover/movie?api_key=328c283cd27bd1877d9080ccb1604c91&primary_release_date.lte=2016-12-31&sort_by=release_date.desc&page=1
-```
+***1. Authentication***
+- User are allow to Signup and Login the account.
+- Kept user session and authenticated status whenever reload the page.
+- Automatically help user logout their acoount whenever session over the expire time.
 
-Detail
+***2. Data Storing***
+- User are allow to save the favourite movie into their registered account.
 
-```
-http://api.themoviedb.org/3/movie/328111?api_key=328c283cd27bd1877d9080ccb1604c91
-```
+***3. Translation***
+-  User can switch their preferred language, Eg: English (Default), Malay and Mandarin.
 
-### Technical requirements:
+***4. SEO Friendly***
+- Every movie link in website will display the OpenGraph Image, Title, Overview whenever user share the link in social media.
+- All movie page are Static Site Generation (SSG) which allow Google SEO to be crawl the data in real time and return into Google search result.
 
-| iOS | Android | Web (ReactJS) | Web (Vanilla JS) |
-| ---- | ------ | ------------- | ---------------- |
-| Minimum Swift 4.0 | Kotlin or Java | React based framework (ReactJS, create-react-app, etc) | Use normal / no-framework JS |
-| Usage of RxSwift + MVVM | RxJava or RxKotlin or Coroutine | CSS or SASS | CSS or SASS |
-| Dependency Injection | MVVM or VIPER | Context API & hooks | State to store value & support 2 way data binding |
-| | Dependency Injection - Dagger or Koin or Hilt | Use correct routes, param & URL (include navigation & not found routes) | Use correct routes, param & URL (include navigation & not found routes) |
-| | Data Binding | Knowledge & experience using typescript is a must | |
+***5. Switch Website Theme***
+- User are allow to change the website background color into "Light" or "Dark" theme.
 
-We expect unit tests for the main functionalities only.
-You can use third party libraries.
+***6. Search Function***
+-  User are allow to search the movie by input the keyword in search box.
 
-### Code Repo
-Please use this repo for your commits.
 
-## Evaluation Criteria
-- Clean, readable, maintainable, and performant code (*this include but not limited to:* no unused code, logger, debugger, warning, error, memory leak, infinite loop, lagging)
-- Clear documentation that describe your assumptions and design considerations, you can use the wiki in this repo. Don't know how to create wiki? [Create one](https://docs.github.com/en/github/building-a-strong-community/adding-or-editing-wiki-pages)
-- Unit Tests will be evaluated
-
-That’s the end of the assignment, we hope you have fun!
-looking forward to your submission.
+<br /> <br />That’s the end of the assessment setup and introduction, I hope you have fun!
+Wish you hav a nice day 🌻🌻🌻
