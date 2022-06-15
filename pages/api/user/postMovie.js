@@ -6,7 +6,7 @@ import { MongoClient, ObjectId } from "mongodb";
 async function handler(req, res) {
   if (req.method === "POST") {
     const { userID, movie } = req.body;
-    console.log("req: ", req.body);
+    // console.log("req: ", req.body);
 
     let client;
     try {

@@ -33,7 +33,7 @@ function Profile(props) {
   //   const { data: session, status } = useSession();
   //   const router = useRouter();
 
-  console.log("session: ", session);
+  // console.log("session: ", session);
 
   //   console.log("status: ", status);
 

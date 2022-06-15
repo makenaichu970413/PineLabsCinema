@@ -36,7 +36,7 @@ export default NextAuth({
           throw new Error("Your password are wrong!");
         }
 
-        console.log("id: ", user._id.toString());
+        // console.log("id: ", user._id.toString());
         client.close();
         return { name: user._id.toString(), email: user.email };
       },
