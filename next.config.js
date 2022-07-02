@@ -16,7 +16,7 @@ module.exports = () => {
       },
       mongoDB: {
         username: "makenaichu970413",
-        password: "Chu970413045109",
+        password: "NwXy1pG5l9BBUsp2",
         clustername: "cluster0",
         database: "pinelabs_cinema",
       },
